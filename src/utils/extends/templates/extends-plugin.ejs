@@ -1,0 +1,13 @@
+
+import deepmerge from 'deepmerge'
+import extendsModules from '<%= options.modulesImportPath %>'
+import { defineNuxtPlugin } from '#app'
+
+export default defineNuxtPlugin(async(nuxtApp) => {
+  const extendComponents = Object.values(extendsModules).reduce(
+    (acc, current) => deepmerge(acc, current.extendComponents || {}),
+    {},
+  )
+
+  nuxtApp.vueApp.provide('<%= options.injectionKey %>', key => extendComponents[key] || {})
+})

@@ -1,0 +1,39 @@
+{
+  "version": "0.0.18",
+  "name": "@documentation/nuxt-micro-services-module",
+  "description": "Microservices for nuxt+vue",
+  "scripts": {
+    "dev": "vitepress --port 3333 --open",
+    "build": "vitepress build",
+    "serve": "vitepress serve"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.38",
+    "@unocss/reset": "^0.37.2",
+    "sass": "^1.52.2",
+    "unocss": "^0.37.2",
+    "unplugin-vue-components": "^0.19.6",
+    "vitepress": "1.0.0-alpha.4"
+  },
+  "files": [
+    ".vitepress/dist"
+  ],
+  "docs": {
+    "type": [
+      "library"
+    ],
+    "public": [
+      ".vitepress/dist"
+    ],
+    "files": [
+      {
+        "name": "Documentation",
+        "path": ".vitepress/dist/index.html",
+        "icon": "https://codybontecou.com/assets/img/vite-logo.1821c958.svg"
+      }
+    ]
+  },
+  "publishConfig": {
+    "registry": "https://gitlab.mdm.de/api/v4/projects/9/packages/npm/"
+  }
+}

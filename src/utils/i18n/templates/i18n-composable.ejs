@@ -1,0 +1,44 @@
+// TODO remove or implement
+
+import { inject } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+import type { UseI18nOptions } from 'vue-i18n'
+
+interface IUseLocaleParamWithI18n {
+  /**
+   * Determines whether return results of useI18n
+   */
+  useI18n: UseI18nOptions | true
+}
+
+interface IUseLocaleParam {
+  useI18n?: null | false
+}
+
+interface IUseLocaleClearReturn {
+  /**
+   * The method helps to change the current locale.
+   * It downloads the required translations and changes cookie
+   */
+  setLocale: (newLocale: string) => Promise<void>
+}
+
+export function useLocale (options?: IUseLocaleParam): IUseLocaleClearReturn
+export function useLocale (options?: IUseLocaleParamWithI18n): IUseLocaleClearReturn & ReturnType<typeof useI18n>
+export function useLocale(options?: IUseLocaleParam | IUseLocaleParamWithI18n) {
+  const useLocale = inject('<%= options.localeInjectionKey %>') as () => IUseLocaleClearReturn
+
+  if (!options || !options.useI18n) {
+    return {
+      ...useLocale(),
+    }
+  }
+
+  if (options && options.useI18n) {
+    return {
+      ...useLocale(),
+      ...useI18n(options.useI18n === true ? undefined : options.useI18n),
+    }
+  }
+}

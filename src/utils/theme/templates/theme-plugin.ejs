@@ -1,0 +1,10 @@
+
+import deepmerge from 'deepmerge'
+import initializeConfig from '<%= options.configImportPath %>'
+import { defineNuxtPlugin } from '#app'
+
+export default defineNuxtPlugin(async(nuxtApp) => {
+  const config = initializeConfig()
+
+  nuxtApp.vueApp.provide('<%= options.injectionKey %>', config)
+})

@@ -1,0 +1,15 @@
+{
+  "@Theme": {
+    "_": {
+      "siteName": "MDM Coin Shop"
+    },
+
+    "header": {
+      "links": {
+        "jobs": "Jobs",
+        "freeDelivery": "Free Delivery",
+        "giftService": "Gift Service",
+      }
+    }
+  }
+}

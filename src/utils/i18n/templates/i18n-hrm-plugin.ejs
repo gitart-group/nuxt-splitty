@@ -1,0 +1,11 @@
+import { useI18n } from 'vue-i18n'
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.hook('vue:setup', () => {
+    const $i18n = useI18n()
+
+    import.meta.hot.on('<%= options.hrmEvent %>', ({ localeData, locale }) => {
+      $i18n.setLocaleMessage(locale, localeData)
+    })
+  })
+})

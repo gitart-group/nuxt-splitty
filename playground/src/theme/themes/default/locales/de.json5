@@ -1,0 +1,15 @@
+{
+  "@Theme": {
+    "_": {
+      "siteName": "MDM-Münzenshop"
+    },
+
+    "header": {
+      "links": {
+        "jobs": "Jobs",
+        "freeDelivery": "Frei Haus",
+        "giftService": "Geschenkservice",
+      }
+    }
+  }
+}

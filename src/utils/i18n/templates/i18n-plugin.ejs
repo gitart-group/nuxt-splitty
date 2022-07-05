@@ -1,0 +1,62 @@
+// TODO remove or implement
+
+import path from 'path'
+import { createI18n } from 'vue-i18n'
+import { defineNuxtPlugin } from '#app'
+
+const langs = {
+<% options.locales.forEach(({locale, importPath }) => { %>
+  <%= locale %>: () => import('<%= importPath %>'),
+<% }) %>
+}
+
+export default defineNuxtPlugin(async(nuxtApp) => {
+  const locale = useCookie('<%= options.cookieName %>', {
+    default: () => '<%= options.mainLocale %>'
+  })
+
+  if(!Object.values(langs).includes(locale.value)){
+    locale.value = '<%= options.mainLocale %>'
+  }
+
+  const data = await langs[locale.value]()
+
+  const messages = {
+    <% options.locales.forEach(({locale, importPath }) => { %>
+      <%= locale %>: {},
+    <% }) %>
+  }
+
+  messages[locale.value] = data.default
+
+  const i18n = createI18n({
+    legacy: false,
+    globalInjection: true,
+    locale: locale.value,
+    <% if(options.fallbackLocale) { %> 
+    fallbackLocale: '<%= options.fallbackLocale %>',
+    <% } %> 
+    messages,
+  })
+  nuxtApp.vueApp.use(i18n)
+
+
+  const useLocale = () => {
+    const setLocale = async (newLocale) => {
+      if(Object.keys(i18n.global.getLocaleMessage(newLocale)).length === 0) {
+        const data = await langs[newLocale]()
+        i18n.global.setLocaleMessage(newLocale, data.default)
+      }
+      
+
+      locale.value = newLocale
+      i18n.global.locale.value = newLocale
+    }
+
+    return {
+      setLocale,
+    }
+  }
+
+  nuxtApp.vueApp.provide('<%= options.injectionKey %>', useLocale)
+})

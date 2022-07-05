@@ -1,0 +1,7 @@
+{
+  "@Cart": {
+    "components": {
+      "OpenCartButton": "Warenkorb öffnen"
+    }
+  }
+}

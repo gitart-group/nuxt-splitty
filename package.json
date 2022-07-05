@@ -1,0 +1,52 @@
+{
+  "name": "nuxt-splitty",
+  "version": "0.0.1",
+  "description": "",
+  "license": "OSL-3.0",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "exports": {
+    ".": {
+      "import": "./src/module.ts",
+      "require": "./src/module.ts"
+    }
+  },
+  "main": "./src/module.ts",
+  "types": "./src/module.ts",
+  "scripts": {
+    "dev": "THEME_ENV_PATH=env/.env-default nuxi dev playground",
+    "dev:build": "THEME_ENV_PATH=env/.env-default nuxi build playground",
+    "build:docs": "cd docs && pnpm build",
+    "publish:docs": "yarn build:docs && yarn --cwd docs version --no-git-tag-version --new-version $npm_package_version && yarn --cwd docs publish --new-version $npm_package_version",
+    "prepublishOnly": "(if-env PUBLISH_DOCS=true && yarn publish:docs) || echo skip docs publish",
+    "lint": "eslint ."
+  },
+  "peerDependencies": {
+    "@nuxtjs/i18n-edge": "^8.0.0-alpha.0-27516108.1766d8d",
+    "vue-i18n": "^9.2.0-beta.35",
+    "vue-router": "^4.0.14"
+  },
+  "dependencies": {
+    "@antfu/utils": "^0.5.1",
+    "@nuxt/kit": "^3.0.0-rc.4",
+    "consola": "^2.15.3",
+    "deepmerge": "^4.2.2",
+    "defu": "^6.0.0",
+    "fs-extra": "^10.1.0",
+    "json5": "^2.2.1",
+    "recursive-readdir-async": "^1.2.1",
+    "ufo": "^0.8.4"
+  },
+  "devDependencies": {
+    "@gitart/eslint-config-vue": "^0.2.0",
+    "@nuxt/module-builder": "latest",
+    "@nuxtjs/eslint-config-typescript": "^10.0.0",
+    "@types/fs-extra": "^9.0.13",
+    "@types/lodash-es": "^4.17.6",
+    "eslint": "^8.17.0",
+    "nuxt": "3.0.0-rc.4",
+    "typescript": "^4.7.2"
+  }
+}

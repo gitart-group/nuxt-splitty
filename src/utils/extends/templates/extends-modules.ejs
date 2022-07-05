@@ -1,0 +1,5 @@
+<%= options.extend.map(({ name, path }) =>`import ${'extend_' + name} from '${path.replace(/\\/g,'/')}';`).join('\n') %>
+
+export default {
+<%= options.extend.map(({ name, path }) =>`\textend_${name},`).join('\n') %>
+};

@@ -1,0 +1,15 @@
+{
+  "@Core": {
+    "components": {
+      "TheHeaderSearchBar":{
+        "placeholder": "Durchsuche die Seite"
+      }
+    },
+
+    "pages": {
+      "home": {
+        "mainTitle": "Willkommen im Giart-Shop"
+      }
+    }
+  }
+}

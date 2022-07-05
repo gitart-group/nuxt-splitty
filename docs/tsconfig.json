@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve",
+    "paths": {
+      "@/*": ["./*"],
+    },
+  },
+  "include": [
+    ".vitepress/**/*",
+  ],
+}
