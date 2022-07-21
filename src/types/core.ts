@@ -59,6 +59,7 @@ export interface NMSNuxtOptions {
    * Theme options
    */
   theme: {
+    enabled?: boolean
     name: string
     themesDir: string
   }
@@ -121,7 +122,7 @@ interface _II18nConfig {
    * Disables i18n
    * @default false
    */
-  disabled?: boolean
+  enabled?: boolean
 }
 
 export type II18nConfig = _II18nConfig
@@ -134,7 +135,7 @@ interface _IPiniaConfig {
    * Disables Pinia
    * @default false
    */
-  disabled?: boolean
+  enabled?: boolean
 }
 
 export type IPiniaConfig = _IPiniaConfig

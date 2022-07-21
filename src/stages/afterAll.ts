@@ -65,8 +65,8 @@ async function registerLayouts({ allModules, directories }: IOptions): Promise<s
  * Register main plugin with extensions
  */
 async function registerPiniaAutoImport({ pinia }: IOptions) {
-  if (pinia.disabled)
-    return ''
+  if (!pinia.enabled)
+    return 'pinia is disabled'
 
   addAutoImport([
     'createPinia',

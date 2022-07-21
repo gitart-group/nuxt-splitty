@@ -175,9 +175,10 @@ function extendScss({ configurations, options: { allModules } }: IPrepareModules
     extendViteConfig((config) => {
       const cssOptions: UserConfig['css'] = {
         preprocessorOptions: {
-          sass: {
-            additionalData: (data, filePath) => {
-              return `@/vuetify/vars.scss \n${data}`
+          scss: {
+            additionalData: (data: string, filePath: string) => {
+              data = `${flatten.map(path => `@use '${path}' as *;`).join('\n')}${data}`
+              return data
             },
           },
         },

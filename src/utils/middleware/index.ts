@@ -45,8 +45,8 @@ export const init: InitFunc = async({ options: { directories, allModules } }) =>
       }
     })
 
-  nuxt.hook('pages:middleware:extend', (middleware) => {
-    middleware.push(...flattenMiddleware)
+  nuxt.hook('app:resolve', (app) => {
+    app.middleware.push(...flattenMiddleware)
   })
 
   return 'Middleware registered'

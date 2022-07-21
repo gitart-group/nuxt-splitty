@@ -50,16 +50,17 @@ export const DEFAULTS: NMSNuxtOptions = {
   vendorDir: 'vendor', // tmp npm modules directory (symlinks)
   nodeModulesDir: 'node_modules', // directory to find npm modules
   pinia: {
-    disabled: false, // set 'false' if PINIA is implemented in the project
+    enabled: false, // set 'false' if PINIA is implemented in the project
   },
   // logLoadedModules: false, // show debug logs with loaded modules
   verbose: true, // show debug logs
   directories: DIRECTORIES, // directories names
   i18n: {
-    disabled: false,
+    enabled: false,
     locales: [],
   },
   theme: {
+    enabled: false,
     name: 'default',
     themesDir: 'theme/themes',
   },

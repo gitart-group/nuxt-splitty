@@ -4,6 +4,10 @@
 
 <template>
   <div class="empty-page">
+    <NuxtLink to="/">
+      Home
+    </NuxtLink>
+
     <slot />
   </div>
 </template>

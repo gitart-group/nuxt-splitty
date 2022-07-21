@@ -1,6 +1,6 @@
 {
   "name": "nuxt-splitty",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "description": "",
   "license": "OSL-3.0",
   "type": "module",
@@ -8,10 +8,7 @@
     "src"
   ],
   "exports": {
-    ".": {
-      "import": "./src/module.ts",
-      "require": "./src/module.ts"
-    }
+    ".": "./src/module.ts"
   },
   "main": "./src/module.ts",
   "types": "./src/module.ts",
@@ -30,7 +27,7 @@
   },
   "dependencies": {
     "@antfu/utils": "^0.5.1",
-    "@nuxt/kit": "^3.0.0-rc.4",
+    "@nuxt/kit": "^3.0.0-rc.6",
     "consola": "^2.15.3",
     "deepmerge": "^4.2.2",
     "defu": "^6.0.0",
@@ -46,7 +43,7 @@
     "@types/fs-extra": "^9.0.13",
     "@types/lodash-es": "^4.17.6",
     "eslint": "^8.17.0",
-    "nuxt": "3.0.0-rc.4",
+    "nuxt": "3.0.0-rc.6",
     "typescript": "^4.7.2"
   }
 }

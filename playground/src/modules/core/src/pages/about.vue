@@ -6,6 +6,7 @@ definePageMeta({
   middleware: [
     'cart/someMiddleware',
   ],
+  layout: 'core/empty',
 })
 
 useHead({

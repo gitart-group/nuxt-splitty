@@ -21,8 +21,8 @@ type InitFunc = (params: {
 }) => Promise<string>
 
 export const init: InitFunc = async({ options }) => {
-  if (!options.theme)
-    return ''
+  if (!options.theme.enabled)
+    return 'theme system is disabled'
 
   const nuxt = useNuxt()
 

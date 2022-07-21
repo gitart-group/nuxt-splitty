@@ -31,8 +31,8 @@ import {
  }) => Promise<string>
 
 export const init: InitFunc = async({ options }) => {
-  if (options.i18n.disabled)
-    return ''
+  if (!options.i18n.enabled)
+    return 'i18n is disabled'
 
   if (((!options.i18n?.locales?.length) || options.i18n?.locales?.length === 0))
     throw new Error('[i18n.locales] is not defined or empty. Disable it or add at least one locale.')

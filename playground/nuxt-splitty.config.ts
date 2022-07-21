@@ -21,10 +21,11 @@ export default defineConfig({
   },
 
   pinia: {
-    disabled: true,
+    enabled: false,
   },
 
   theme: {
+    enabled: true,
     name: 'default',
   },
 })

@@ -1,7 +1,10 @@
 {
-  "version": "0.0.18",
   "name": "@documentation/nuxt-micro-services-module",
+  "version": "0.0.18",
   "description": "Microservices for nuxt+vue",
+  "files": [
+    ".vitepress/dist"
+  ],
   "scripts": {
     "dev": "vitepress --port 3333 --open",
     "build": "vitepress build",
@@ -15,9 +18,6 @@
     "unplugin-vue-components": "^0.19.6",
     "vitepress": "1.0.0-alpha.4"
   },
-  "files": [
-    ".vitepress/dist"
-  ],
   "docs": {
     "type": [
       "library"

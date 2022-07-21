@@ -194,12 +194,15 @@ export function prepareOptions(userConfigWithDefaults: NMSNuxtOptions): IOptions
     })
   }
 
-  let theme = null
-  if (options.theme) {
+  let theme: any = {
+    enabled: false,
+  }
+  if (options.theme.enabled) {
     const nuxt = useNuxt()
     const themePath = resolve(nuxt.options.srcDir, options.theme.themesDir, options.theme.name)
 
     theme = {
+      enabled: true,
       name: options.theme.name,
       themesDir: options.theme.themesDir,
       path: themePath,
