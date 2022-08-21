@@ -3,7 +3,9 @@ import dotenv from 'dotenv'
 import { defineNuxtConfig } from 'nuxt'
 import nuxtMicroServices from '..'
 
-dotenv.config({ path: path.resolve(__dirname, process.env.THEME_ENV_PATH!) })
+const themePath = process.env.THEME_ENV_PATH || 'env/.env-default'
+
+dotenv.config({ path: path.resolve(__dirname, themePath) })
 
 export default defineNuxtConfig({
   buildModules: [

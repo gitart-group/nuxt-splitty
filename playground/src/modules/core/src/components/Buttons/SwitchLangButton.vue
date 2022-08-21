@@ -10,6 +10,8 @@ const {
   useScope: 'global',
 })
 
+console.warn('availableLocales', availableLocales)
+
 const onSetLocale = (l: string) => {
   if (locale.value === l)
     return

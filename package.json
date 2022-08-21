@@ -1,6 +1,6 @@
 {
   "name": "nuxt-splitty",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "",
   "license": "OSL-3.0",
   "type": "module",
@@ -21,13 +21,13 @@
     "lint": "eslint ."
   },
   "peerDependencies": {
-    "@nuxtjs/i18n-edge": "^8.0.0-alpha.0-27516108.1766d8d",
+    "@nuxtjs/i18n-edge": "^8.0.0-alpha.0-27683700.c59ab7a",
     "vue-i18n": "^9.2.0-beta.35",
     "vue-router": "^4.0.14"
   },
   "dependencies": {
     "@antfu/utils": "^0.5.1",
-    "@nuxt/kit": "^3.0.0-rc.6",
+    "@nuxt/kit": "^3.0.0-rc.8",
     "consola": "^2.15.3",
     "deepmerge": "^4.2.2",
     "defu": "^6.0.0",
@@ -43,7 +43,7 @@
     "@types/fs-extra": "^9.0.13",
     "@types/lodash-es": "^4.17.6",
     "eslint": "^8.17.0",
-    "nuxt": "3.0.0-rc.6",
+    "nuxt": "3.0.0-rc.8",
     "typescript": "^4.7.2"
   }
 }
