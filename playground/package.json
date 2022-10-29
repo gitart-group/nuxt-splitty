@@ -2,11 +2,11 @@
   "private": true,
   "name": "my-module-playground",
   "devDependencies": {
-    "nuxt-windicss": "^2.5.0",
+    "nuxt-windicss": "^2.5.2",
     "sass": "^1.51.0"
   },
   "dependencies": {
-    "@nuxtjs/i18n-edge": "^8.0.0-alpha.0-27683700.c59ab7a",
-    "vue-i18n": "^9.2.2"
+    "@nuxtjs/i18n": "8.0.0-beta.2",
+    "vue-i18n": "^9.3.0-beta.6"
   }
 }

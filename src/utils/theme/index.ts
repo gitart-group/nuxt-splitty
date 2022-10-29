@@ -1,5 +1,5 @@
 import path from 'path'
-import { addAutoImport, addPluginTemplate, addTemplate, useNuxt } from '@nuxt/kit'
+import { addImports, addPluginTemplate, addTemplate, useNuxt } from '@nuxt/kit'
 import { readFile } from 'fs-extra'
 import { template } from 'lodash'
 
@@ -52,7 +52,7 @@ export const init: InitFunc = async({ options }) => {
     },
   })
 
-  addAutoImport({
+  addImports({
     name: 'useThemeConfig',
     as: 'useThemeConfig',
     from: composableTemplate.dst!,

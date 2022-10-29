@@ -1,5 +1,5 @@
 
-import { addAutoImport, addPluginTemplate, addTemplate, useNuxt } from '@nuxt/kit'
+import { addImports, addPluginTemplate, addTemplate, useNuxt } from '@nuxt/kit'
 import { readFile } from 'fs-extra'
 import { flattenDeep, template } from 'lodash'
 import {
@@ -84,7 +84,7 @@ export const init: InitFunc = async({ options: { directories, allModules } }) =>
     write: true,
   })
 
-  addAutoImport({
+  addImports({
     name: 'useExtend',
     as: 'useExtend',
     from: composableTemplate.dst!,

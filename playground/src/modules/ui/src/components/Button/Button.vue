@@ -7,7 +7,8 @@
 <style lang="scss" scoped>
 .btn {
   @apply
-    px-4 py-2
+    min-h-10
+    px-4 py-1
     rounded-lg
     outline-none
     transition-all duration-200

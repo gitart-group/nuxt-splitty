@@ -1,6 +1,6 @@
 import { join as joinPath } from 'path'
 import { flattenDeep } from 'lodash'
-import { addAutoImport, extendPages, useNuxt } from '@nuxt/kit'
+import { addImports, extendPages, useNuxt } from '@nuxt/kit'
 import { existsSync } from 'fs-extra'
 import { p } from '@antfu/utils'
 import { list } from 'recursive-readdir-async'
@@ -68,7 +68,7 @@ async function registerPiniaAutoImport({ pinia }: IOptions) {
   if (!pinia.enabled)
     return 'pinia is disabled'
 
-  addAutoImport([
+  addImports([
     'createPinia',
     'defineStore',
     'getActivePinia',

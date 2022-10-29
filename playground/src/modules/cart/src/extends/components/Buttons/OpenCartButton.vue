@@ -10,7 +10,7 @@ defineProps<{
 <template>
   <NuxtLink
     v-slot="{navigate}"
-    :to="{name: ROUTE_NAME.CART + '___de'}"
+    :to="{name: ROUTE_NAME.CART}"
   >
     <Button @click="navigate">
       {{ $t('@Cart.components.OpenCartButton') }}

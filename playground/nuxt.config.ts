@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     [nuxtMicroServices, {
       configFile: 'nuxt-splitty.config.ts',
     }],
-    ['@nuxtjs/i18n-edge', {
+    ['@nuxtjs/i18n', {
       locales: [
         {
           code: 'en',
@@ -24,9 +24,15 @@ export default defineNuxtConfig({
           file: 'de.json',
         },
       ],
+      strategy: 'no_prefix',
       lazy: true,
       langDir: '../vendor/_i18n/',
       defaultLocale: 'en',
+      detectBrowserLanguage: {
+        useCookie: true,
+        cookieKey: 'i18n_redirected',
+        redirectOn: 'root', // recommended
+      },
       vueI18n: {
         allowComposition: true,
         legacy: false,

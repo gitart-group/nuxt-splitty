@@ -2,33 +2,40 @@
 import { useI18n } from 'vue-i18n'
 
 import Button from '@UI/components/Button/Button.vue'
+const switchLocalePath = useSwitchLocalePath()
+// const setLocale = useSetLocale()
 
 const {
-  availableLocales,
+  localeCodes,
   locale,
+  setLocale,
+  setLocaleCookie,
 } = useI18n({
   useScope: 'global',
 })
 
-console.warn('availableLocales', availableLocales)
 
 const onSetLocale = (l: string) => {
-  if (locale.value === l)
-    return
+  console.warn('onSetLocale', l, switchLocalePath(l))
+  switchLocalePath(l)
+  setLocale(l)
+  setLocaleCookie(l)
+  // if (locale.value === l)
+  //   return
 
-  locale.value = l
+  // locale.value = l
 }
 </script>
 
 <template>
   <div class="flex gap-2">
     <Button
-      v-for="l in availableLocales"
+      v-for="l in localeCodes"
       :key="(l as string)"
       :class="{
-        '!border-orange-400': l === locale
+        '!border-purple-500': l === locale
       }"
-      class="uppercase"
+      class="uppercase border-4 border-solid border-transparent"
       @click="onSetLocale(l as string)"
     >
       {{ l }}

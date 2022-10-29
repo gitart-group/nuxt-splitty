@@ -1,6 +1,6 @@
 import path from 'path'
 import type { NMSModuleConfig } from '@module/types/module/index'
-import { addAutoImport } from '@nuxt/kit'
+import { addImports } from '@nuxt/kit'
 
 import type { IOptions } from '../../types/core'
 
@@ -22,7 +22,7 @@ export const init: InitFunc = async({ configurations, options }) => {
 
     autoImports.forEach(({ name, as, from }) => {
       const autoImportPath = path.resolve(module.path, from)
-      addAutoImport({
+      addImports({
         as,
         name,
         from: autoImportPath,
