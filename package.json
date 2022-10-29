@@ -1,7 +1,7 @@
 {
   "name": "nuxt-splitty",
-  "version": "0.0.8",
-  "description": "",
+  "version": "0.0.10",
+  "description": "Build your Nuxt 3 application based on the Micro Services architecture",
   "license": "OSL-3.0",
   "type": "module",
   "files": [
@@ -19,6 +19,15 @@
     "publish:docs": "yarn build:docs && yarn --cwd docs version --no-git-tag-version --new-version $npm_package_version && yarn --cwd docs publish --new-version $npm_package_version",
     "prepublishOnly": "(if-env PUBLISH_DOCS=true && yarn publish:docs) || echo skip docs publish",
     "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gitart-group/nuxt-splitty.git",
+    "directory": "."
+  },
+  "author": {
+    "name": "Mykhailo Kryvoruchko",
+    "email": "michaelgitart@gmail.com"
   },
   "peerDependencies": {
     "@nuxtjs/i18n": "^8.0.0-beta.2",
