@@ -1,5 +1,11 @@
 <script setup lang="ts">
 import Container from '@UI/components/Container/Container.vue'
+
+const toast = useToast()
+
+onMounted(() => {
+  toast.success('Page mounted!')
+})
 </script>
 
 <template>

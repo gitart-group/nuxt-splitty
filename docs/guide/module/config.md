@@ -253,14 +253,22 @@ import type { NMSModuleConfig } from 'nuxt-splitty'
 
 export default <NMSModuleConfig>{
   // ...
-  autoImports: [{
-    name: 'useDialog',
-    // 'as' is optional. If not specified, the `name` will be used.
-    as: 'useCoreDialog', 
-    from: './composables/dialog',
-  }],
+  autoImports: [
+    {
+      name: 'useDialog',
+      // 'as' is optional. If not specified, the `name` will be used.
+      as: 'useCoreDialog', 
+      from: './composables/dialog',
+    },
+    {
+      name: 'useToast',
+      from: 'vue-toast-notification',
+    },
+  ],
 };
 ```
+
+**NOTE:** `from` should start with `./` if it's local file, otherwise it will be considered a package. 
 
 Usage:
 

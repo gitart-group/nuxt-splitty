@@ -13,13 +13,22 @@ export default <NMSModuleConfig>{
     {
       src: './plugins/axios',
     },
+    {
+      src: './plugins/vue-toast-notification',
+    },
   ],
 
-  autoImports: [{
-    name: 'useAxios',
-    as: 'useCoreAxios',
-    from: './composables/axios',
-  }],
+  autoImports: [
+    {
+      name: 'useAxios',
+      as: 'useCoreAxios',
+      from: './composables/axios',
+    },
+    {
+      name: 'useToast',
+      from: 'vue-toast-notification',
+    },
+  ],
 
   css: [
     './assets/scss/main.scss',

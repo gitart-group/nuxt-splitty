@@ -1,6 +1,6 @@
 {
   "name": "nuxt-splitty",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Build your Nuxt 3 application based on the Micro Services architecture",
   "license": "OSL-3.0",
   "type": "module",

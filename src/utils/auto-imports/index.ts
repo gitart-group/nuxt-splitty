@@ -21,11 +21,15 @@ export const init: InitFunc = async({ configurations, options }) => {
     const module = options.allModules.find(m => m.name === name)!
 
     autoImports.forEach(({ name, as, from }) => {
-      const autoImportPath = path.resolve(module.path, from)
+      let fromValue = from
+
+      if (from.startsWith('.'))
+        fromValue = path.resolve(module.path, from)
+
       addImports({
         as,
         name,
-        from: autoImportPath,
+        from: fromValue,
       })
     })
   })

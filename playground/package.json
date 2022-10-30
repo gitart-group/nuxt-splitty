@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "8.0.0-beta.2",
-    "vue-i18n": "^9.3.0-beta.6"
+    "vue-i18n": "^9.3.0-beta.6",
+    "vue-toast-notification": "^3.0"
   }
 }
